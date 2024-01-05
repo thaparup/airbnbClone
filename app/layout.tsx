@@ -2,6 +2,12 @@ import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import Nabvar from './components/navbar/Nabvar'
+import Modal from './components/modals/Modal'
+import ToasterProvider from './components/providers/ToasterProvider'
+import RegisterModal from './components/modals/RegisterModal'
+
+
+
 
 // const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ subsets: ['latin'], weight: ['200', '400'] })
@@ -16,10 +22,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
       <body className={poppins.className}>
+        <ToasterProvider />
         <Nabvar />
+        <RegisterModal />
         {children}</body>
     </html>
   )

@@ -3,12 +3,17 @@ import React, { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avartar";
 import MenuItem from "./MenuItem";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
+
+
 function UserMenu() {
 
     const [menu, setMenu] = useState(false)
     const toggleMenu = useCallback(() => {
         setMenu((prev) => !prev)
     }, [setMenu])
+
+    const registerModal = useRegisterModal();
 
     return (
         <div className="relative ">
@@ -68,10 +73,12 @@ function UserMenu() {
                 text-sm">
                     <>
                         <MenuItem onClick={() => { }} label="Login" />
-                        <MenuItem onClick={() => { }} label="Sign up" />
+                        <MenuItem onClick={registerModal.onOpen} label="Sign up" />
                     </>
                 </div>
             )}
+
+
         </div>
     );
 }
