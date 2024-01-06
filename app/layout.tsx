@@ -7,6 +7,8 @@ import ToasterProvider from './components/providers/ToasterProvider'
 import RegisterModal from './components/modals/RegisterModal'
 import LoginModal from './components/modals/LoginModal'
 import getCurrentUser from './actions/getCurrentUser'
+import Categories from './components/Categories'
+import RentModal from './components/modals/RentModal'
 
 
 
@@ -33,6 +35,8 @@ export default async function RootLayout({
         <Nabvar currentUser={currentUser} />
         <RegisterModal />
         <LoginModal />
+        <RentModal />
+        <Categories />
         {children}</body>
     </html>
   )
